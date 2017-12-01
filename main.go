@@ -50,7 +50,7 @@ func wait(length time.Duration, cancel <-chan bool) bool {
 }
 
 func printLogo(c *telgo.Client) {
-	for _, line := range logoBW72 {
+	for _, line := range logoBW80 {
 		c.Sayln(" " + line)
 	}
 }
@@ -65,14 +65,30 @@ func (g Greeter) Exec(c *telgo.Client, args []string) bool {
 	c.Sayln("")
 	printLogo(c)
 	c.Sayln("")
-	c.Sayln("       Hello!")
+	c.Sayln("       Hello there")
 	c.Sayln("")
 
 	if wait(1*time.Second, c.Cancel) {
 		return true
 	}
-	c.Sayln("     Did you know: realraum will be celebrating its 10th birthday")
-	c.Sayln("     on the 18th of March 2017?")
+	c.Sayln("     welcome to <<</>>")
+	c.Sayln("     your friendly tech neighborhood")
+	c.Sayln("     from the valley of the clueless")
+	c.Sayln("")
+
+	if wait(1*time.Second, c.Cancel) {
+		return true
+	}
+	c.Sayln("     we run a comfy hackspace")
+	c.Sayln("     with a peaceful comunity")
+	c.Sayln("")
+
+	if wait(1*time.Second, c.Cancel) {
+		return true
+	}
+	c.Sayln("     we are part of")
+	c.Sayln("     Chaos Computer Club")
+	c.Sayln("     over 10 years")
 	c.Sayln("")
 
 	if wait(1*time.Second, c.Cancel) {
@@ -84,13 +100,15 @@ func (g Greeter) Exec(c *telgo.Client, args []string) bool {
 	if wait(3*time.Second, c.Cancel) {
 		return true
 	}
-	c.Sayln("     fun fun fun!")
+	c.Sayln("     fun on the device")
+	c.Sayln("     mate for days")
+	c.Sayln("     like minded people")
 	c.Sayln("")
 
 	if wait(3*time.Second, c.Cancel) {
 		return true
 	}
-	c.Sayln("     come to the party ... we mean it!")
+	c.Sayln("     come and visit us ... we mean it!")
 	c.Sayln("")
 	c.Sayln("     you have now 10s to decide:")
 
@@ -124,31 +142,32 @@ func answer(c *telgo.Client, args []string) bool {
 		fallthrough
 	case "yes":
 		c.Sayln("")
-		c.Sayln("     Great! We'll see you at the party then.")
+		c.Sayln("     Great! We'll see you at our hackspace then.")
 		c.Sayln("")
-		c.Sayln("     expect DJ Music, Food, Tschunk, Games and more")
-		c.Sayln("")
-		c.Sayln("     2017-03-18 from 18:00 till it's over")
+		c.Sayln("     expect Music, sometimes Food, Mate,")
+        c.Sayln("     Hacksessions and more")
 		c.Sayln("")
 		c.Sayln("     Find the place:")
-		c.Sayln("     realraum, Brockmanngasse 15, 8010 Graz")
-		c.Sayln("     http://osm.org/go/0Iz~oIpTW?m=&node=668061696")
+		c.Sayln("     HQ im Zentralwerk, Riesaer Straße 32, 01127 Dresden")
+		c.Sayln("     https://www.openstreetmap.org/way/372193022")
 		c.Sayln("")
 		c.Sayln("     Save the date:")
-		c.Sayln("     https://plus.google.com/u/0/events/cqiq6003lok2qd9jcqmh4u4p8d4")
-		c.Sayln("     https://10.r3.at/10r3.ics")
+		c.Sayln("     Chaostuesday is on Thurdays")
+		c.Sayln("     Chaosthursday is on Tuesdays")
+		c.Sayln("     https://c3d2.de/ical.ics")
 		c.Sayln("")
 		c.Sayln("     Get more Info:")
-		c.Sayln("     https://wiki.realraum.at/unterkunft")
-		c.Sayln("     idle at irc://irc.oftc.net/#realraum")
-		fmt.Printf("client(%s) wants to come to the party!\n", c.Conn.RemoteAddr())
+		c.Sayln("     https://c3d2.de")
+		c.Sayln("     idle at xmpp://chat.c3d2.de/c3d2")
+		c.Sayln("     or irc://irc.hackint.net/#c3d2")
+		fmt.Printf("client(%s) wants to come to the hq!\n", c.Conn.RemoteAddr())
 	case "n":
 		fallthrough
 	case "no":
 		c.Sayln("")
 		c.Sayln("     Sorry to hear! You're missing out on a great experience.")
 		c.Sayln("     We trust in your ability to listen to great music and have lot's")
-		c.Sayln("     of fun with great food and tschunk at home though.")
+		c.Sayln("     of fun with great hacks and mate at home though.")
 		fmt.Printf("client(%s) won't show up :(\n", c.Conn.RemoteAddr())
 	default:
 		c.Sayln("       yes or no?")
@@ -157,7 +176,7 @@ func answer(c *telgo.Client, args []string) bool {
 	}
 
 	c.Sayln("")
-	c.Sayln("         https://github.com/realraum/telme10")
+	c.Sayln("         https://github.com/c3d2/telme10")
 	c.Sayln("")
 	time.Sleep(1 * time.Second)
 	return true
