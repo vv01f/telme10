@@ -1,5 +1,5 @@
 [Unit]
-Description=realraum birthday telnet server
+Description=<<</>> telnet server
 After=local-fs.target
 
 [Service]

@@ -68,7 +68,7 @@ func (g Greeter) Exec(c *telgo.Client, args []string) bool {
 	c.Sayln("       Hello there")
 	c.Sayln("")
 
-	if wait(1*time.Second, c.Cancel) {
+	if wait(5*time.Second, c.Cancel) {
 		return true
 	}
 	c.Sayln("     welcome to <<</>>")
@@ -76,14 +76,14 @@ func (g Greeter) Exec(c *telgo.Client, args []string) bool {
 	c.Sayln("     from the valley of the clueless")
 	c.Sayln("")
 
-	if wait(1*time.Second, c.Cancel) {
+	if wait(5*time.Second, c.Cancel) {
 		return true
 	}
 	c.Sayln("     we run a comfy hackspace")
-	c.Sayln("     with a peaceful comunity")
+	c.Sayln("     with a peaceful community")
 	c.Sayln("")
 
-	if wait(1*time.Second, c.Cancel) {
+	if wait(3*time.Second, c.Cancel) {
 		return true
 	}
 	c.Sayln("     we are part of")
@@ -91,7 +91,7 @@ func (g Greeter) Exec(c *telgo.Client, args []string) bool {
 	c.Sayln("     over 10 years")
 	c.Sayln("")
 
-	if wait(1*time.Second, c.Cancel) {
+	if wait(3*time.Second, c.Cancel) {
 		return true
 	}
 	c.Sayln("     you should come by!")
