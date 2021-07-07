@@ -88,7 +88,11 @@ func (g Greeter) Exec(c *telgo.Client, args []string) bool {
 	}
 	c.Sayln("     we are part of")
 	c.Sayln("     Chaos Computer Club")
-	c.Sayln("     over 10 years")
+	t1 := Date(2004, 12, 27)
+    	t2 := time.Now().Date()
+    	days := t2.Sub(t1).Hours() / 24
+	years := days * 100 / 36525
+	c.Sayln(fmt.Sprint("     over " , years, " years"))
 	c.Sayln("")
 
 	if wait(3*time.Second, c.Cancel) {
